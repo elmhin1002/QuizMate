@@ -17,10 +17,22 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddQuestionActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".EditQuestionActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ViewQuestionActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
