@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.QuizMate" parent="Base.Theme.QuizMate" />
+
+    <style name="Theme.CustomButton" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorSecondary">@color/orange</item>
+    </style>
 </resources>
