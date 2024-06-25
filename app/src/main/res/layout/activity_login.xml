@@ -38,7 +38,7 @@
         android:layout_gravity="center"
         android:background="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/QuizMate" />
+        android:src="@drawable/quiz_mate" />
 
 
     <TextView
