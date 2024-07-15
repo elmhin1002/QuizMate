@@ -48,15 +48,6 @@
             android:inputType="textPhonetic"
             android:padding="12dp"
             android:background="@drawable/edit_text_background" />
-        <EditText
-            android:id="@+id/password_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/save_button"

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
 
-    <TextView
-        android:id="@+id/quiz_history_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quiz History"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="16dp"/>
+<TextView
+    android:id="@+id/tvQuizHistory"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Quiz History"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_gravity="center_horizontal"
+    android:paddingBottom="16dp" />
 
-    <ListView
-        android:id="@+id/quiz_history_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
 </LinearLayout>
