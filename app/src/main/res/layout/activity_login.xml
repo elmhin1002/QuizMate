@@ -8,38 +8,14 @@
     android:orientation="vertical"
     tools:context=".activities.LoginActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btnBackLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:src="@drawable/ic_arrow_back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:text="Đăng nhập"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
     <ImageButton
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
+        android:layout_marginTop="40dp"
         android:background="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/QuizMate" />
-
+        android:src="@drawable/quiz_mate" />
 
     <TextView
         android:layout_width="match_parent"
