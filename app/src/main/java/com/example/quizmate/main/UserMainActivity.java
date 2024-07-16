@@ -1,6 +1,5 @@
 package com.example.quizmate.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,10 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizmate.R;
-//import com.example.quizmate.adapter.QuizAdapter;
-//import com.example.quizmate.auth.ProfileActivity;
+import com.example.quizmate.adapter.QuizAdapter;
 import com.example.quizmate.entity.Quiz;
-//import com.example.quizmate.quiz.AddQuizActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +30,7 @@ public class UserMainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private DatabaseReference databaseReference;
     private List<Quiz> quizList;
-//    private QuizAdapter quizAdapter;
+    private QuizAdapter quizAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,34 +42,34 @@ public class UserMainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         quizList = new ArrayList<>();
-//        quizAdapter = new QuizAdapter(quizList, this);
-//        recyclerView.setAdapter(quizAdapter);
+        quizAdapter = new QuizAdapter(quizList, this);
+        recyclerView.setAdapter(quizAdapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("quizzes");
 
         fetchQuizzes();
 
-//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//                if (id == R.id.navigation_home) {
-//                    // Already on home, no action needed
-//                    return true;
-//                } else if (id == R.id.navigation_add) {
-//                    // Start AddQuizActivity to add a new quiz
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.navigation_home) {
+                    // Already on home, no action needed
+                    return true;
+                } else if (id == R.id.navigation_add) {
+                    // Start AddQuizActivity to add a new quiz
 //                    startActivity(new Intent(UserMainActivity.this, AddQuizActivity.class));
-//                    return true;
-//                } else if (id == R.id.navigation_user) {
-//                    // Start UserActivity to show user details
+                    return true;
+                } else if (id == R.id.navigation_user) {
+                    // Start UserActivity to show user details
 //                    startActivity(new Intent(UserMainActivity.this, ProfileActivity.class));
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        });
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
     }
 
     private void fetchQuizzes() {
@@ -85,7 +82,7 @@ public class UserMainActivity extends AppCompatActivity {
                     Quiz quiz = quizSnapshot.getValue(Quiz.class);
                     quizList.add(quiz);
                 }
-//                quizAdapter.notifyDataSetChanged();
+                quizAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
             }
 
