@@ -19,6 +19,19 @@
             android:name=".quiz.AddQuizActivity"
             android:exported="false" />
         <activity
+            android:name=".auth.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".auth.ChangePasswordActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".auth.ForgotPasswordActivity"
+            android:theme="@style/CustomDialogTheme"
+            android:exported="true"/>
+        <activity
             android:name=".main.UserMainActivity"
             android:exported="true">
             <intent-filter>
