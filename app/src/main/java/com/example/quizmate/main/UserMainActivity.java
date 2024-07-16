@@ -1,5 +1,6 @@
 package com.example.quizmate.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quizmate.R;
 import com.example.quizmate.adapter.QuizAdapter;
 import com.example.quizmate.entity.Quiz;
+import com.example.quizmate.quiz.AddQuizActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,7 +61,7 @@ public class UserMainActivity extends AppCompatActivity {
                     return true;
                 } else if (id == R.id.navigation_add) {
                     // Start AddQuizActivity to add a new quiz
-//                    startActivity(new Intent(UserMainActivity.this, AddQuizActivity.class));
+                    startActivity(new Intent(UserMainActivity.this, AddQuizActivity.class));
                     return true;
                 } else if (id == R.id.navigation_user) {
                     // Start UserActivity to show user details
