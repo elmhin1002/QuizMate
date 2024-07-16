@@ -13,6 +13,12 @@
         android:theme="@style/Theme.QuizMate"
         tools:targetApi="31">
         <activity
+            android:name=".quiz.EditQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quiz.TakeQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".quiz.QuizDetailActivity"
             android:exported="false" />
         <activity

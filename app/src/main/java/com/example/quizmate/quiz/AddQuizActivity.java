@@ -66,10 +66,10 @@ public class AddQuizActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_home) {
-                    startActivity(new Intent(AddQuizActivity.this, UserMainActivity.class));
+                    finish();
                     return true;
                 } else if (id == R.id.navigation_add) {
-                    // Already on add quiz, no action needed
+                    startActivity(new Intent(AddQuizActivity.this, AddQuizActivity.class));
                     return true;
                 } else if (id == R.id.navigation_user) {
                     // Handle navigation to user profile
@@ -89,7 +89,7 @@ public class AddQuizActivity extends AppCompatActivity {
 
         // Create the EditText for the term
         EditText editTextTerm = new EditText(this);
-        editTextTerm.setHint("Thuật ngữ");
+        editTextTerm.setHint("Term");
         editTextTerm.setPadding(10, 10, 10, 10);
         editTextTerm.setBackground(getResources().getDrawable(R.drawable.edittext_background));
         LinearLayout.LayoutParams termParams = new LinearLayout.LayoutParams(
@@ -100,7 +100,7 @@ public class AddQuizActivity extends AppCompatActivity {
 
         // Create the EditText for the definition
         EditText editTextDefinition = new EditText(this);
-        editTextDefinition.setHint("Định nghĩa");
+        editTextDefinition.setHint("Definition");
         editTextDefinition.setPadding(10, 10, 10, 10);
         editTextDefinition.setBackground(getResources().getDrawable(R.drawable.edittext_background));
         LinearLayout.LayoutParams defParams = new LinearLayout.LayoutParams(

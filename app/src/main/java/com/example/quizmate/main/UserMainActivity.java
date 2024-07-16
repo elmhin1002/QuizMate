@@ -57,7 +57,7 @@ public class UserMainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_home) {
-                    // Already on home, no action needed
+                    finish();
                     return true;
                 } else if (id == R.id.navigation_add) {
                     // Start AddQuizActivity to add a new quiz
