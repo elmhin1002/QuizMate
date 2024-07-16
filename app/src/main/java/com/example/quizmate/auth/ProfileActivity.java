@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizmate.R;
-import com.example.quizmate.quiz.question.ViewQuestionsActivity;
+//import com.example.quizmate.quiz.question.ViewQuestionsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -61,13 +61,13 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        btnViewQuestions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, ViewQuestionsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnViewQuestions.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ProfileActivity.this, ViewQuestionsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         btnBackProfile.setOnClickListener(new View.OnClickListener() {
             @Override

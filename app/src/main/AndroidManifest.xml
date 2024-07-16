@@ -34,6 +34,9 @@
             android:name=".auth.ChangePasswordActivity"
             android:exported="true"/>
         <activity
+            android:name=".auth.ProfileActivity"
+            android:exported="true"/>
+        <activity
             android:name=".auth.ForgotPasswordActivity"
             android:theme="@style/CustomDialogTheme"
             android:exported="true"/>
@@ -47,9 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserProfileActivity" />
-        <activity android:name=".QuizHistoryActivity" />
-        <activity android:name=".ResetPasswordActivity" />
     </application>
 
 </manifest>
