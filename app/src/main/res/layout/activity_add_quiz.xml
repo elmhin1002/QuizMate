@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".main.AddQuizActivity">
+    tools:context=".quiz.AddQuizActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tiêu đề"
+                android:hint="Title"
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"/>
@@ -30,7 +30,7 @@
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mô tả"
+                android:hint="Description"
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"/>
@@ -39,7 +39,7 @@
                 android:id="@+id/editTextTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Thời gian (phút)"
+                android:hint="Time (minutes)"
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"
@@ -60,7 +60,7 @@
                         android:id="@+id/editTextTerm1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Thuật ngữ"
+                        android:hint="Term"
                         android:padding="10dp"
                         android:background="@drawable/edittext_background"
                         android:layout_marginTop="16dp"
@@ -69,7 +69,7 @@
                         android:id="@+id/editTextDefinition1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Định nghĩa"
+                        android:hint="Definition"
                         android:padding="10dp"
                         android:background="@drawable/edittext_background"/>
                 </LinearLayout>
@@ -82,7 +82,7 @@
                         android:id="@+id/editTextTerm2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Thuật ngữ"
+                        android:hint="Term"
                         android:padding="10dp"
                         android:background="@drawable/edittext_background"
                         android:layout_marginTop="16dp"
@@ -91,7 +91,7 @@
                         android:id="@+id/editTextDefinition2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Định nghĩa"
+                        android:hint="Definition"
                         android:padding="10dp"
                         android:background="@drawable/edittext_background"/>
                 </LinearLayout>

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quiz.QuizDetailActivity">
+    tools:context=".quiz.EditQuizActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_above="@id/bottom_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,8 +32,7 @@
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"
-                android:textStyle="bold"
-                android:enabled="false"/>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -50,8 +49,7 @@
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"
-                android:textStyle="bold"
-                android:enabled="false"/>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,49 +67,13 @@
                 android:background="@drawable/edittext_background"
                 android:layout_marginBottom="16dp"
                 android:inputType="number"
-                android:textStyle="bold"
-                android:enabled="false"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_take_quiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/blue"
-                    android:text="Take Quiz"
-                    android:textColor="@android:color/white" />
-
-                <Button
-                    android:id="@+id/btn_edit_quiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:backgroundTint="@color/green"
-                    android:text="Edit"
-                    android:textColor="@android:color/white" />
-
-                <Button
-                    android:id="@+id/btn_delete_quiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:backgroundTint="@color/red"
-                    android:text="Delete"
-                    android:textColor="@android:color/white" />
-
-            </LinearLayout>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Questions"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
                 android:layout_marginBottom="4dp"/>
 
             <LinearLayout
@@ -122,6 +84,23 @@
                 <!-- Questions will be dynamically added here -->
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_add_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/green"
+                android:text="Add Question"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btn_save_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/blue"
+                android:text="Save Quiz"
+                android:textColor="@android:color/white"/>
         </LinearLayout>
     </ScrollView>
 
