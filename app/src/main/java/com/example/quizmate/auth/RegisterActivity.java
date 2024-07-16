@@ -1,6 +1,5 @@
 package com.example.quizmate.auth;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,23 +17,20 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtRegisterUsername, edtRegisterEmail, edtRegisterPassword;
     private Button btnRegister;
     private ProgressBar progressBarRegister;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private static final String TAG = "RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
-        ImageButton btnBackForgotPassword = findViewById(R.id.btnBackRegister);
-        btnBackForgotPassword.setOnClickListener(new View.OnClickListener() {
+        ImageButton btnBackRegister = findViewById(R.id.btnBackRegister);
+        btnBackRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -49,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,23 +71,35 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
-                            User newUser = new User(username, email);
-                            mDatabase.child(user.getUid()).setValue(newUser)
-                                    .addOnCompleteListener(task1 -> {
-                                        progressBarRegister.setVisibility(View.GONE);
-                                        if (task1.isSuccessful()) {
-                                            Toast.makeText(RegisterActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                            startActivity(intent);
-                                            finish();
-                                        } else {
-                                            Toast.makeText(RegisterActivity.this, "Đăng ký thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                            sendEmailVerification(user, username, email);
                         }
                     } else {
                         progressBarRegister.setVisibility(View.GONE);
                         Toast.makeText(RegisterActivity.this, "Đăng ký thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void sendEmailVerification(FirebaseUser user, String username, String email) {
+        user.sendEmailVerification()
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        User newUser = new User(username, email);
+                        mDatabase.child(user.getUid()).setValue(newUser)
+                                .addOnCompleteListener(task1 -> {
+                                    progressBarRegister.setVisibility(View.GONE);
+                                    if (task1.isSuccessful()) {
+                                        Toast.makeText(RegisterActivity.this, "Đăng ký thành công. Vui lòng kiểm tra email để xác thực", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(RegisterActivity.this, "Đăng ký thất bại. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    } else {
+                        progressBarRegister.setVisibility(View.GONE);
+                        Toast.makeText(RegisterActivity.this, "Không thể gửi email xác thực. Vui lòng thử lại", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
