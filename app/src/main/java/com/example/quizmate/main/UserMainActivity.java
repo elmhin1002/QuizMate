@@ -57,14 +57,14 @@ public class UserMainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_home) {
-                    finish();
+                    startActivity(new Intent(UserMainActivity.this, UserMainActivity.class));
                     return true;
                 } else if (id == R.id.navigation_add) {
                     // Start AddQuizActivity to add a new quiz
                     startActivity(new Intent(UserMainActivity.this, AddQuizActivity.class));
                     return true;
                 } else if (id == R.id.navigation_user) {
-                    // Start UserActivity to show user details
+//                     Start UserActivity to show user details
 //                    startActivity(new Intent(UserMainActivity.this, ProfileActivity.class));
                     return true;
                 } else {

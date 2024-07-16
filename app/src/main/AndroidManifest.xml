@@ -37,8 +37,9 @@
             android:name=".auth.ForgotPasswordActivity"
             android:theme="@style/CustomDialogTheme"
             android:exported="true"/>
+        <activity android:name=".main.UserMainActivity"/>
         <activity
-            android:name=".main.UserMainActivity"
+            android:name=".main.GuestMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
