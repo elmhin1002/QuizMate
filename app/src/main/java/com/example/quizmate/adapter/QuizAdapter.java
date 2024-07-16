@@ -1,6 +1,7 @@
 package com.example.quizmate.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizmate.R;
 import com.example.quizmate.entity.Quiz;
+import com.example.quizmate.quiz.QuizDetailActivity;
 
 import java.util.List;
 
@@ -37,6 +39,12 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.quizTitleText.setText(quiz.getName());
         holder.quizSubtitleText.setText(quiz.getDescription());
         holder.quizTimeText.setText(String.valueOf(quiz.getMax_time()) + " min");
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, QuizDetailActivity.class);
+            intent.putExtra("QUIZ_ID", quiz.getId());
+            context.startActivity(intent);
+        });
     }
 
     @Override

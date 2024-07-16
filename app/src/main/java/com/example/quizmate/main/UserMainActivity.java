@@ -82,7 +82,10 @@ public class UserMainActivity extends AppCompatActivity {
                 quizList.clear();
                 for (DataSnapshot quizSnapshot : snapshot.getChildren()) {
                     Quiz quiz = quizSnapshot.getValue(Quiz.class);
-                    quizList.add(quiz);
+                    if (quiz != null) {
+                        quiz.setId(quizSnapshot.getKey());
+                        quizList.add(quiz);
+                    }
                 }
                 quizAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
@@ -95,4 +98,5 @@ public class UserMainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
