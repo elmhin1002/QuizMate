@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".main.GuestMainActivity">
+
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QuizMate"
+        android:textSize="50sp"
+        android:textColor="@color/blue"
+        android:layout_gravity=""
+        android:layout_marginTop="16dp" />
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:id="@+id/searchBarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/search_bar_background"
+        android:padding="8dp"
+        android:layout_marginTop="16dp">
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search..."
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_vertical" />
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Search Icon" />
+    </LinearLayout>
+
+    <!-- Placeholder for Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/quiz_mate" />
+
+    <!-- Sign Up and Sign In Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</LinearLayout>
